@@ -1,0 +1,30 @@
+mixin header(user)
+  header
+    .header__logo-container
+      a(href='#')
+        img(src=require('./logo.svg') alt='Логотип')
+    ul.header__nav
+      li
+        a.header__item.bold(href='#') О нас
+      li
+        a.header__item.header__item-after(href='#') Услуги
+      li
+        a.header__item(href='#') Вакансии
+      li
+        a.header__item(href='#') Новости
+      li
+        a.header__item.header__item-after(href='#') Соглашения
+    .header__autentification-container
+      if user
+        .user
+          span= user
+      else
+        .enter
+          a.enter__link(href='#')
+            span.enter__text.bold
+              | войти
+        .regestration
+          a.regestration__link(href='#')
+            span.regestration__text.bold
+              | зарегистрироваться
+

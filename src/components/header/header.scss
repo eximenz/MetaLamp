@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "Material Icons";
+  // src: url("../../fonts/MaterialIconsOutlined-Regular.eot");
+  src: local("☺"), url("../../fonts/MaterialIconsOutlined-Regular.woff") format("woff"),
+    url("../../fonts/MaterialIconsOutlined-Regular.ttf") format("truetype"),
+    url("../../fonts/MaterialIconsOutlined-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  // src: url("../../fonts/Montserrat-Bold.eot");
+  src: local("☺"), url("../../fonts/Montserrat-Bold.woff") format("woff"),
+    url("../../fonts/Montserrat-Bold.ttf") format("truetype"), url("../../fonts/Montserrat-Bold.svg") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../fonts/Montserrat-Regular.eot");
+  src: local("☺"), url("../../fonts/Montserrat-Regular.woff") format("woff"),
+    url("../../fonts/Montserrat-Regular.ttf") format("truetype"),
+    url("../../fonts/Montserrat-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Conv_Quicksand-Regular";
+  src: url("../../fonts/Quicksand-Regular.eot");
+  src: local("☺"), url("../../fonts/Quicksand-Regular.woff") format("woff"),
+    url("../../fonts/Quicksand-Regular.ttf") format("truetype"), url("../../fonts/Quicksand-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$white: #ffffff;
+$purple: #bc9cff;
+$dark50: rgba(31, 32, 65, 0.5);
+
+header {
+  width: 1440px;
+  height: 70px;
+  background: $white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  font-family: "Montserrat";
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0 140px;
+  display: flex;
+  justify-content: flex-end;
+  color: $dark50;
+}
+.header__logo-container {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: auto;
+}
+.header__nav {
+  display: flex;
+  height: inherit;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header__item {
+  padding-right: 20px;
+  color: $dark50;
+  &-after {
+    display: flex;
+    &:after {
+      content: "keyboard_arrow_down";
+      font-family: "Material Icons";
+      font-size: 25px;
+    }
+  }
+}
+.bold {
+  font-weight: 700;
+}
+.header__autentification-container {
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+.enter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 87px;
+  height: 34px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+  margin-right: 20px;
+  &__link {
+    display: flex;
+    width: 83px;
+    height: 30px;
+    border-radius: 22px;
+    background: $white;
+    align-items: center;
+    justify-content: center;
+  }
+  &__text {
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $purple;
+  }
+}
+.regestration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__link {
+    display: flex;
+    width: 196px;
+    height: 34px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+    align-items: center;
+    justify-content: center;
+  }
+  &__text {
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $white;
+  }
+}
+
+.user {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid;
+  border-left-color: rgba(31, 32, 65, 0.1);
+  padding-left: 20px;
+}
