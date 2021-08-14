@@ -1,6 +1,4 @@
-$white: #ffffff;
-$purple: #bc9cff;
-$dark50: rgba(31, 32, 65, 0.5);
+@import "../../variables/variables.scss";
 
 header {
   width: 1440px;
@@ -30,8 +28,12 @@ header {
 }
 .header__item {
   padding-right: 20px;
+  white-space: nowrap;
   color: $dark50;
-  &-after {
+  &:hover {
+    color: rgba(31, 32, 65, 0.75);
+  }
+  &_after {
     display: flex;
     &:after {
       content: "keyboard_arrow_down";
@@ -48,7 +50,7 @@ header {
   display: flex;
   align-items: center;
 }
-.enter {
+.header__enter {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,44 +59,54 @@ header {
   border-radius: 22px;
   background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
   margin-right: 20px;
-  &__link {
-    display: flex;
-    width: 83px;
-    height: 30px;
-    border-radius: 22px;
-    background: $white;
-    align-items: center;
-    justify-content: center;
-  }
-  &__text {
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: $purple;
-  }
-}
-.regestration {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &__link {
-    display: flex;
-    width: 196px;
-    height: 34px;
-    border-radius: 22px;
-    background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
-    align-items: center;
-    justify-content: center;
-  }
-  &__text {
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: $white;
+  &:hover {
+    opacity: 0.5;
   }
 }
 
-.user {
+.header__enterlink {
+  display: flex;
+  width: 83px;
+  height: 30px;
+  border-radius: 22px;
+  background: $white;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__entertext {
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $purple;
+}
+
+.header__registration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__registrationlink {
+  display: flex;
+  width: 196px;
+  height: 34px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    opacity: 0.5;
+  }
+}
+.header__registrationtext {
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $white;
+}
+
+.header__user {
   height: 30px;
   display: flex;
   align-items: center;
