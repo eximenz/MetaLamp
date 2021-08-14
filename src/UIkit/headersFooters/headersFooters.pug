@@ -7,4 +7,10 @@ html(lang="ru")
     title Document
   body 
     include ../../components/header/header.pug
-    +header("Юлий Цезарь")
+    include ../../components/foo/bigfoo.pug
+    .first-header 
+      +header()
+    .second-header 
+      +header("Юлий Цезарь")
+    .first-foo
+      +footer
