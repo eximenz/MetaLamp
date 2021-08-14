@@ -1,6 +1,6 @@
 @import "../../variables/variables.scss";
 
-header {
+.header {
   width: 1440px;
   height: 70px;
   background: $white;
@@ -12,105 +12,102 @@ header {
   display: flex;
   justify-content: flex-end;
   color: $dark50;
-}
-.header__logo-container {
-  height: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-right: auto;
-}
-.header__nav {
-  display: flex;
-  height: inherit;
-  align-items: center;
-  justify-content: flex-end;
-}
-.header__item {
-  padding-right: 20px;
-  white-space: nowrap;
-  color: $dark50;
-  &:hover {
-    color: rgba(31, 32, 65, 0.75);
-  }
-  &_after {
+  &__logo-container {
+    height: inherit;
     display: flex;
-    &:after {
-      content: "keyboard_arrow_down";
-      font-family: "Material Icons";
-      font-size: 25px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: auto;
+  }
+  &__nav {
+    display: flex;
+    height: inherit;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__navitem {
+    padding-right: 20px;
+    white-space: nowrap;
+    color: $dark50;
+    &:hover {
+      color: rgba(31, 32, 65, 0.75);
+    }
+    &_after {
+      display: flex;
+      &:after {
+        content: "keyboard_arrow_down";
+        font-family: "Material Icons";
+        font-size: 25px;
+      }
     }
   }
+  &__autentification-container {
+    height: inherit;
+    display: flex;
+    align-items: center;
+  }
+  &__enter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 87px;
+    height: 34px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+    margin-right: 20px;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  &__enterlink {
+    display: flex;
+    width: 83px;
+    height: 30px;
+    border-radius: 22px;
+    background: $white;
+    align-items: center;
+    justify-content: center;
+  }
+  &__entertext {
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $purple;
+  }
+  &__registration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__registrationlink {
+    display: flex;
+    width: 196px;
+    height: 34px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      opacity: 0.5;
+    }
+  }
+  &__registrationtext {
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $white;
+  }
+  &__user {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid;
+    border-left-color: rgba(31, 32, 65, 0.1);
+    padding-left: 20px;
+  }
 }
+
 .bold {
   font-weight: 700;
-}
-.header__autentification-container {
-  height: inherit;
-  display: flex;
-  align-items: center;
-}
-.header__enter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 87px;
-  height: 34px;
-  border-radius: 22px;
-  background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
-  margin-right: 20px;
-  &:hover {
-    opacity: 0.5;
-  }
-}
-
-.header__enterlink {
-  display: flex;
-  width: 83px;
-  height: 30px;
-  border-radius: 22px;
-  background: $white;
-  align-items: center;
-  justify-content: center;
-}
-
-.header__entertext {
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: $purple;
-}
-
-.header__registration {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.header__registrationlink {
-  display: flex;
-  width: 196px;
-  height: 34px;
-  border-radius: 22px;
-  background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
-  align-items: center;
-  justify-content: center;
-  &:hover {
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    opacity: 0.5;
-  }
-}
-.header__registrationtext {
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: $white;
-}
-
-.header__user {
-  height: 30px;
-  display: flex;
-  align-items: center;
-  border-left: 1px solid;
-  border-left-color: rgba(31, 32, 65, 0.1);
-  padding-left: 20px;
 }
