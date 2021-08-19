@@ -1,5 +1,5 @@
 mixin footer
-  footer 
+  footer.footer
     .foo-top
       .foo-top__info
         .foo-top__logo
@@ -39,11 +39,13 @@ mixin footer
         .foo-top__header подписка
         .foo-top__text
           | Получайте специальные предложения и новости сервиса
-        .foo-top__field
+        form.foo-top__form(action="ref.php" method="post")
+          input.foo-top__email(name="email" placeholder="Email")
+          button.foo-top__submit(type="submit")
     .foo-bottom
       .foo-bottom__copyright
         | Copyright © 2018 Toxin отель. Все права защищены.
       .foo-bottom__smedia
-        .foo-bottom__twitter 
-        .foo-bottom__facebook 
-        .foo-bottom__insta
+        a.fab.fa-twitter(href='#')
+        a.fab.fa-facebook-square(href='#')
+        a.fab.fa-instagram(href='#')
