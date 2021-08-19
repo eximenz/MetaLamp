@@ -5,15 +5,15 @@ mixin header(user)
         img(src=require('../../img/logo.svg') alt='Логотип')
     ul.header__nav
       li
-        a.header__navitem.header__navitem_active(href='#') О нас
+        a.header__item.header__navitem_active(href='#') О нас
       li
-        a.header__navitem.header__item_after(href='#') Услуги
+        a.header__item.header__item_after(href='#') Услуги
       li
-        a.header__navitem(href='#') Вакансии
+        a.header__item(href='#') Вакансии
       li
-        a.header__navitem(href='#') Новости
+        a.header__item(href='#') Новости
       li
-        a.header__navitem.header__item_after(href='#') Соглашения
+        a.header__item.header__item_after(href='#') Соглашения
     .header__autentification-container
       if user
         .header__user
