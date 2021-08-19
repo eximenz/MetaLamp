@@ -8,6 +8,8 @@ html(lang="ru")
   body 
     include ../../components/header/header.pug
     include ../../components/foo/bigfoo.pug
+    .group
+      img(src=require('../../img/group.svg') alt='Логотип')
     .first-header 
       +header()
     .second-header 
