@@ -1,5 +1,5 @@
 {
-  "name": "MetaLamp",
+  "name": "metalamp",
   "version": "1.0.0",
   "description": "webpack course",
   "private": true,
@@ -32,6 +32,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "jquery": "^3.6.0"
   }
 }
