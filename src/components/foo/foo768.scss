@@ -1,0 +1,28 @@
+.foo768px__container {
+  width: 768px;
+  height: 367px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fff;
+}
+
+.foo768px__logo {
+  margin-bottom: 20px;
+}
+
+.foo768px__copyright {
+  margin-bottom: 25px;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.75);
+}
+
+.foo768px__smedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
