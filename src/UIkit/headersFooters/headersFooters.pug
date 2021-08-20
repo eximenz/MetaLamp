@@ -8,6 +8,7 @@ html(lang="ru")
   body 
     include ../../components/header/header.pug
     include ../../components/foo/bigfoo.pug
+    include ../../components/foo/foo768.pug
     .group
       img(src=require('../../img/group.svg') alt='Логотип')
     .first-header 
@@ -16,3 +17,5 @@ html(lang="ru")
       +header("Юлий Цезарь")
     .first-foo
       +footer
+    .second-foo 
+      +footer768 
