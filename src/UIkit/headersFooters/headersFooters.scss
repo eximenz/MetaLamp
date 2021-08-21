@@ -1,7 +1,12 @@
 body {
   background: #e5e5e5;
-  height: 1350px;
-  width: 1440px;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100%;
+  overflow: hidden;
+  flex-direction: column;
 }
 
 .group {
@@ -9,26 +14,22 @@ body {
 }
 
 .first-header {
-  position: absolute;
-  top: 140px;
-  width: inherit;
+  margin-top: 62px;
+  width: 100%;
 }
 .second-header {
-  position: absolute;
-  top: 250px;
-  width: inherit;
+  margin-top: 40px;
+  width: 100%;
 }
 
 .first-foo {
-  position: absolute;
-  top: 360px;
-  width: inherit;
+  margin-top: 40px;
+  width: 100%;
 }
 
 .second-foo {
-  position: absolute;
-  top: 843px;
-  width: inherit;
+  margin-top: 40px;
+  width: 100%;
   display: flex;
   justify-content: center;
 }

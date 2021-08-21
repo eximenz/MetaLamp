@@ -9,13 +9,14 @@ html(lang="ru")
     include ../../components/header/header.pug
     include ../../components/foo/bigfoo.pug
     include ../../components/foo/foo768.pug
-    .group
-      img(src=require('../../img/group.svg') alt='Логотип')
-    .first-header 
-      +header()
-    .second-header 
-      +header("Юлий Цезарь")
-    .first-foo
-      +footer
-    .second-foo 
-      +footer768 
+    .wrapper
+      .group
+        img(src=require('../../img/group.svg') alt='Логотип')
+      .first-header 
+        +header()
+      .second-header 
+        +header("Юлий Цезарь")
+      .first-foo
+        +footer
+      .second-foo 
+        +footer768 

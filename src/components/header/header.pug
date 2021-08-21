@@ -1,29 +1,59 @@
 mixin header(user)
   header.header
-    .header__logo-container
-      a(href='#')
-        img(src=require('../../img/logo.svg') alt='Логотип')
-    ul.header__nav
-      li
-        a.header__item.header__item_active(href='#') О нас
-      li
-        a.header__item.header__item_after(href='#') Услуги
-      li
-        a.header__item(href='#') Вакансии
-      li
-        a.header__item(href='#') Новости
-      li
-        a.header__item.header__item_after(href='#') Соглашения
-    .header__autentification-container
-      if user
-        .header__user
-          span= user
-      else
-        .header__enter
-          a.header__enterlink(href='#')
-            span.header__entertext.bold
-              | войти
-        .header__registration
-          a.header__registrationlink(href='#')
-            span.header__registrationtext.bold
-              | зарегистрироваться
+    .header__container
+      .header__logo-container
+        a(href='#')
+          img(src=require('../../img/logo.svg') alt='Логотип')
+      ul.header__nav
+        li
+          a.header__item.header__item_active(href='#') О нас
+        li
+          a.header__item.header__item_after(href='#') Услуги
+        li
+          a.header__item(href='#') Вакансии
+        li
+          a.header__item(href='#') Новости
+        li
+          a.header__item.header__item_after(href='#') Соглашения
+      .header__autentification-container
+        if user
+          .header__user
+            span= user
+        else
+          .header__enter
+            a.header__enterlink(href='#')
+              span.header__entertext.bold
+                | войти
+          .header__registration
+            a.header__registrationlink(href='#')
+              span.header__registrationtext.bold
+                | зарегистрироваться
+    .header__container-media
+      .header__row
+        .header__logo-container
+          a(href='#')
+            img(src=require('../../img/logo.svg') alt='Логотип')
+        .header__autentification-container
+          if user
+            .header__user
+              span= user
+          else
+            .header__enter
+              a.header__enterlink(href='#')
+                span.header__entertext.bold
+                  | войти
+            .header__registration
+              a.header__registrationlink(href='#')
+                span.header__registrationtext.bold
+                  | зарегистрироваться
+      ul.header__nav
+        li
+          a.header__item.header__item_active(href='#') О нас
+        li
+          a.header__item.header__item_after(href='#') Услуги
+        li
+          a.header__item(href='#') Вакансии
+        li
+          a.header__item(href='#') Новости
+        li
+          a.header__item.header__item_after(href='#') Соглашения

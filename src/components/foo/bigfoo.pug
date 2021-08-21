@@ -42,7 +42,61 @@ mixin footer
         form.foo-top__form(action="ref.php" method="post")
           input.foo-top__email(name="email" placeholder="Email")
           button.foo-top__submit(type="submit")
+    .foo-top-media
+      .foo-top__row
+        .foo-top__info
+          .foo-top__logo
+            a(href='#')
+              img(src=require('../../img/logo.svg') alt='Логотип')
+          .foo-top__text
+            | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+        .foo-top__subscription
+          .foo-top__header подписка
+          .foo-top__text
+            | Получайте специальные предложения и новости сервиса
+          form.foo-top__form(action="ref.php" method="post")
+            input.foo-top__email(name="email" placeholder="Email")
+            button.foo-top__submit(type="submit")
+      .foo-top__navrow
+        ul.foo-top__nav
+          li.foo-top__header навигация
+          li
+            a.foo-top__item(href='#') О нас
+          li
+            a.foo-top__item(href='#') Новости
+          li
+            a.foo-top__item(href='#') Служба поддержки
+          li
+            a.foo-top__item(href='#') Услуги
+        ul.foo-top__about
+          li.foo-top__header о нас
+          li
+            a.foo-top__item(href='#') О сервисе
+          li
+            a.foo-top__item(href='#') Наша команда
+          li
+            a.foo-top__item(href='#') Вакансии
+          li
+            a.foo-top__item(href='#') Инвесторы
+        ul.foo-top__support
+          li.foo-top__header служба поддержки
+          li
+            a.foo-top__item(href='#') Соглашения
+          li
+            a.foo-top__item(href='#') Сообщества
+          li
+            a.foo-top__item(href='#') Связь с нами
     .foo-bottom
+      .foo-bottom__copyright
+        | Copyright © 2018 Toxin отель. Все права защищены.
+      .foo-bottom__smedia
+        a.fab.fa-twitter(href='#')
+        a.fab.fa-facebook-square(href='#')
+        a.fab.fa-instagram(href='#')
+    .foo__container-media
+      .foo-top__logo 
+        a(href='#')
+          img(src=require('../../img/logo.svg') alt='Логотип')
       .foo-bottom__copyright
         | Copyright © 2018 Toxin отель. Все права защищены.
       .foo-bottom__smedia
