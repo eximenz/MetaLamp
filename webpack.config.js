@@ -6,7 +6,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    // header: './components/header/header.js',
+    index: './UIkit/index.pug',
     headersFooters: './UIkit/headersFooters/headersFooters.js'
   },
   output: {
@@ -19,13 +19,14 @@ module.exports = {
     hot: true
   },
   plugins: [
-    // new HTMLWebpackPlugin({
-    //   filename: 'header.html',
-    //   template: './components/header/header.pug'
-    // chunks: ['header'] чанки это и есть точки входа. Если они 
-    // включены, то страница использует только этот js, а если чанка нет,
-    // то подключает все js из точек входа.
-    // }),
+    new HTMLWebpackPlugin({
+      filename: 'index.html',
+      template: './UIkit/index.pug',
+      chunks: ['index']
+      // чанки это и есть точки входа. Если они 
+      // включены, то страница использует только этот js, а если чанка нет,
+      // то подключает все js из точек входа.
+    }),
     new HTMLWebpackPlugin({
       filename: 'headersFooters.html',
       template: './UIkit/headersFooters/headersFooters.pug',
