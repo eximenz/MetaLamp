@@ -48,13 +48,13 @@ module.exports = {
         generator: {
           filename: 'images/[name].[hash][ext]'
         },
-        exclude: path.resolve(__dirname, 'src/fonts')
+        exclude: [path.resolve(__dirname, 'src/fonts'), path.resolve(__dirname, 'node_modules/@fortawesome/fontawesome-free/webfonts')]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
         type: 'asset/resource',
 
-        include: path.resolve(__dirname, 'src/fonts'),
+        include: [path.resolve(__dirname, 'src/fonts'), path.resolve(__dirname, 'node_modules/@fortawesome/fontawesome-free/webfonts')],
         generator: {
           filename: 'fonts/[name].[hash][ext]'
         }
