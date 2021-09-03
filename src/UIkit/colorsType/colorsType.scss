@@ -2,6 +2,21 @@ $dark: #1f2041;
 $primary: #bc9cff;
 $secondary: #6fcf97;
 
+@mixin flex($direction, $jujustify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jujustify;
+  align-items: $align;
+}
+
+@mixin text($family, $weight, $size, $height, $color) {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+}
+
 @mixin opasity($opasity) {
   background: $dark;
   opacity: $opasity;
@@ -18,20 +33,16 @@ body {
 .colors-and-type__container {
   padding: 0 140px;
   margin-top: 67px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  @include flex(row, space-between, none);
 }
 
 .palette {
-  display: flex;
-  flex-direction: column;
+  @include flex(column, none, none);
 }
 
 .colors {
-  display: flex;
-  flex-direction: row;
   margin-bottom: 20px;
+  @include flex(row, none, none);
 }
 
 .colors__item {
@@ -70,29 +81,18 @@ body {
 
 .colors__color-container {
   padding-left: 40px;
-  display: flex;
-  flex-direction: column;
   height: 70px;
-  justify-content: center;
+  @include flex(column, center, none);
 }
 
 .colors__color-name {
-  font-family: Montserrat;
-  font-weight: 700;
-  font-size: 19px;
-  line-height: 28px;
-  color: $dark;
+  @include text("Montserrat", 700, 19px, 28px, $dark);
 }
 
 .colors__color-hash {
-  font-family: Montserrat;
-  font-weight: 400;
-  font-size: 19px;
-  line-height: 28px;
-  color: $dark;
+  @include text("Montserrat", 400, 19px, 28px, $dark);
 }
 
 .type {
-  display: flex;
-  flex-direction: column;
+  @include flex(column, none, none);
 }

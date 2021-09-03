@@ -1,37 +1,47 @@
-@import "../../variables/variables.scss";
+$dark50: rgba(31, 32, 65, 0.5);
+$dark75: rgba(31, 32, 65, 0.75);
+$white: #fff;
+$primary: #bc9cff;
+
+@mixin flex($direction, $jujustify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jujustify;
+  align-items: $align;
+}
+
+@mixin text($family, $weight, $size, $height, $color) {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+}
 
 .header {
   background: $white;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   &__container {
     min-height: 70px;
-    font-family: "Montserrat";
-    font-size: 14px;
-    line-height: 17px;
     padding: 0 140px;
-    display: flex;
-    justify-content: flex-end;
-    color: $dark50;
+    @include flex(none, flex-end, none);
+    @include text("Montserrat", 400, 14px, 17px, $dark50);
   }
   &__logo-container {
     min-height: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
     margin-right: auto;
+    @include flex(none, flex-start, center);
   }
   &__nav {
-    display: flex;
     height: inherit;
-    align-items: center;
-    justify-content: flex-end;
+    @include flex(none, flex-end, center);
   }
   &__item {
     padding-right: 20px;
     white-space: nowrap;
     color: $dark50;
     &:hover {
-      color: rgba(31, 32, 65, 0.75);
+      color: $dark75;
     }
     &_after {
       display: flex;
@@ -47,68 +57,53 @@
   }
   &__autentification-container {
     min-height: inherit;
-    display: flex;
-    align-items: center;
+    @include flex(none, none, center);
   }
   &__enter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 87px;
     min-height: 34px;
     border-radius: 22px;
-    background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
+    background: linear-gradient(180deg, $primary 0%, #8ba4f9 100%);
     margin-right: 20px;
+    @include flex(none, center, center);
     &:hover {
       opacity: 0.5;
     }
   }
   &__enterlink {
-    display: flex;
     width: 83px;
     min-height: 30px;
     border-radius: 22px;
     background: $white;
-    align-items: center;
-    justify-content: center;
+    @include flex(none, center, center);
   }
   &__entertext {
-    font-size: 12px;
-    line-height: 15px;
     text-transform: uppercase;
-    color: $purple;
+    @include text(inherit, inherit, 12px, 15px, $primary);
   }
   &__registration {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex(none, center, center);
   }
   &__registrationlink {
-    display: flex;
     width: 196px;
     min-height: 34px;
     border-radius: 22px;
-    background: linear-gradient(180deg, $purple 0%, #8ba4f9 100%);
-    align-items: center;
-    justify-content: center;
+    background: linear-gradient(180deg, $primary 0%, #8ba4f9 100%);
+    @include flex(none, center, center);
     &:hover {
       opacity: 0.5;
     }
   }
   &__registrationtext {
-    font-size: 12px;
-    line-height: 15px;
-    font-weight: 700;
     text-transform: uppercase;
-    color: $white;
+    @include text(inherit, 700, 12px, 15px, $white);
   }
   &__user {
     min-height: 30px;
-    display: flex;
-    align-items: center;
     border-left: 1px solid;
     border-left-color: rgba(31, 32, 65, 0.1);
     padding-left: 20px;
+    @include flex(none, none, center);
   }
   &__container-media {
     display: none;
@@ -134,37 +129,30 @@
   }
 
   .header__container-media {
-    display: flex;
-    flex-direction: column;
     max-width: 100%;
     min-height: 70px;
-    font-family: "Montserrat";
-    font-size: 14px;
-    line-height: 17px;
-    color: $dark50;
+    @include flex(column, none, none);
+    @include text("Montserrat", 400, 14px, 17px, $dark50);
   }
 
   .header__row {
     background: $white;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     width: inherit;
     min-height: 50px;
     padding: 0 25px;
+    @include flex(row, space-between, none);
   }
 
   .header__nav {
     background: $white;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    display: flex;
-    justify-content: space-between;
     width: inherit;
     min-height: 40px;
     padding: 0 25px;
     border-top: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
+    @include flex(none, space-between, none);
   }
   .header__user {
     border-left: none;

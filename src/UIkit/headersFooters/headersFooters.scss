@@ -1,12 +1,18 @@
+@mixin flex($direction, $jujustify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jujustify;
+  align-items: $align;
+}
+
 body {
   background: #e5e5e5;
 }
 
 .wrapper {
-  display: flex;
   min-height: 100%;
   overflow: hidden;
-  flex-direction: column;
+  @include flex(column, none, none);
 }
 
 .group {
@@ -30,6 +36,5 @@ body {
 .second-foo {
   margin-top: 40px;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  @include flex(none, center, none);
 }

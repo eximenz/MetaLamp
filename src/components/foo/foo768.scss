@@ -1,11 +1,26 @@
+@mixin flex($direction, $jujustify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jujustify;
+  align-items: $align;
+}
+
+@mixin text($family, $weight, $size, $height, $color) {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+}
+
+$white: #fff;
+$dark75: rgba(31, 32, 65, 0.75);
+
 .foo768px__container {
   width: 768px;
   height: 367px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: #fff;
+  background: $white;
+  @include flex(column, center, center);
 }
 
 .foo768px__logo {
@@ -14,15 +29,9 @@
 
 .foo768px__copyright {
   margin-bottom: 25px;
-  font-family: Montserrat;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  color: rgba(31, 32, 65, 0.75);
+  @include text("Montserrat", 400, 14px, 17px, $dark75);
 }
 
 .foo768px__smedia {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex(none, center, center);
 }
