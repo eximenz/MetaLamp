@@ -1,0 +1,98 @@
+$dark: #1f2041;
+$primary: #bc9cff;
+$secondary: #6fcf97;
+
+@mixin opasity($opasity) {
+  background: $dark;
+  opacity: $opasity;
+}
+
+body {
+  background: #e5e5e5;
+}
+
+.group {
+  margin: 30px;
+}
+
+.colors-and-type__container {
+  padding: 0 140px;
+  margin-top: 67px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.palette {
+  display: flex;
+  flex-direction: column;
+}
+
+.colors {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.colors__item {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+}
+
+.colors__item_dark-shade-100 {
+  @include opasity(1);
+}
+
+.colors__item_dark-shade-75 {
+  @include opasity(0.75);
+}
+
+.colors__item_dark-shade-50 {
+  @include opasity(0.5);
+}
+
+.colors__item_dark-shade-25 {
+  @include opasity(0.25);
+}
+
+.colors__item_dark-shade-5 {
+  @include opasity(0.05);
+}
+
+.colors__item_purple {
+  background: $primary;
+}
+
+.colors__item_green {
+  background: $secondary;
+}
+
+.colors__color-container {
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  justify-content: center;
+}
+
+.colors__color-name {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 28px;
+  color: $dark;
+}
+
+.colors__color-hash {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 28px;
+  color: $dark;
+}
+
+.type {
+  display: flex;
+  flex-direction: column;
+}

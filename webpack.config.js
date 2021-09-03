@@ -6,8 +6,9 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    index: './UIkit/index.pug',
-    headersFooters: './UIkit/headersFooters/headersFooters.js'
+    index: './UIkit/index.js',
+    headersFooters: './UIkit/headersFooters/headersFooters.js',
+    colorsType: './UIkit/colorsType/colorsType.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -23,14 +24,16 @@ module.exports = {
       filename: 'index.html',
       template: './UIkit/index.pug',
       chunks: ['index']
-      // чанки это и есть точки входа. Если они 
-      // включены, то страница использует только этот js, а если чанка нет,
-      // то подключает все js из точек входа.
     }),
     new HTMLWebpackPlugin({
       filename: 'headersFooters.html',
       template: './UIkit/headersFooters/headersFooters.pug',
       chunks: ['headersFooters']
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'colorsType.html',
+      template: './UIkit/colorsType/colorsType.pug',
+      chunks: ['colorsType']
     }),
     // new MiniCssExtractPlugin({
     //   filename: '[name].[contenthash].css'

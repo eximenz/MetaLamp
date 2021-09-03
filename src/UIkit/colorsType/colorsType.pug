@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+  body 
+    mixin color(name, hash, className)
+      .colors
+          .colors__item(class=className)
+          .colors__color-container
+            span.colors__color-name #{name}
+            span.colors__color-hash #{hash}
+    .group
+        img(src=require('../../img/group.svg') alt='Логотип')
+    .colors-and-type__container
+      .palette
+        +color('Dark Shade 100%', "#1F2041", 'colors__item_dark-shade-100')
+        +color('Dark Shade 75%', "#1F2041", 'colors__item_dark-shade-75')
+        +color('Dark Shade 50%', "#1F2041", 'colors__item_dark-shade-50')
+        +color('Dark Shade 25%', "#1F2041", 'colors__item_dark-shade-25')
+        +color('Dark Shade 5%', "#1F2041", 'colors__item_dark-shade-5')
+        +color('Purple', "#BC9CFF", 'colors__item_purple')
+        +color('Green', "#6FCF97", 'colors__item_green')
+      .type
+        .type-h1
+        .type-h2
+        .type-h3
+        .type-body
