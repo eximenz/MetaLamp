@@ -1,6 +1,8 @@
 $dark: #1f2041;
 $primary: #bc9cff;
 $secondary: #6fcf97;
+$dark25: rgba(31, 32, 65, 0.25);
+$dark75: rgba(31, 32, 65, 0.75);
 
 @mixin flex($direction, $jujustify, $align) {
   display: flex;
@@ -93,6 +95,64 @@ body {
   @include text("Montserrat", 400, 19px, 28px, $dark);
 }
 
-.type {
+.type__container {
   @include flex(column, none, none);
+}
+
+.type {
+  @include flex(row, none, none);
+}
+
+.type__tag {
+  width: 30px;
+  @include flex(none, flex-end, none);
+}
+
+.type__demonstration {
+  @include flex(none, none, none);
+}
+
+.type-h1 {
+  margin-right: 30px;
+  @include text("Montserrat", 400, 24px, 29px, $dark25);
+}
+
+.demonstration-h1 {
+  @include text("Montserrat", 700, 24px, 29px, $dark);
+  width: 369px;
+  margin-bottom: 51px;
+}
+
+.type-h2 {
+  margin-right: 30px;
+  @include text("Montserrat", 400, 19px, 23px, $dark25);
+}
+
+.demonstration-h2 {
+  @include text("Montserrat", 700, 19px, 23px, $dark);
+  width: 312px;
+  margin-bottom: 51px;
+}
+
+.type-h3 {
+  margin-right: 30px;
+  text-transform: uppercase;
+  @include text("Montserrat", 400, 12px, 15px, $dark25);
+}
+
+.demonstration-h3 {
+  @include text("Montserrat", 700, 12px, 15px, $dark);
+  width: 186px;
+  margin-bottom: 50px;
+}
+
+.type-body {
+  margin-right: 30px;
+  @include text("Montserrat", 400, 14px, 24px, $dark25);
+}
+
+.demonstration-body {
+  @include text("Montserrat", 400, 14px, 24px, $dark75);
+  width: 301px;
+  color: rgba(31, 32, 65, 0.75);
 }
