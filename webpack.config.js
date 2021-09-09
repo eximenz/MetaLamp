@@ -8,7 +8,9 @@ module.exports = {
   entry: {
     index: './UIkit/index.js',
     headersFooters: './UIkit/headersFooters/headersFooters.js',
-    colorsType: './UIkit/colorsType/colorsType.js'
+    colorsType: './UIkit/colorsType/colorsType.js',
+    cards: './UIkit/cards/cards.js'
+
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -34,6 +36,11 @@ module.exports = {
       filename: 'colorsType.html',
       template: './UIkit/colorsType/colorsType.pug',
       chunks: ['colorsType']
+    }),
+    new HTMLWebpackPlugin({
+      filename: 'cards.html',
+      template: './UIkit/cards/cards.pug',
+      chunks: ['cards']
     }),
     // new MiniCssExtractPlugin({
     //   filename: '[name].[contenthash].css'
