@@ -1,5 +1,6 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin') включить на продакшн
 
 module.exports = {
@@ -41,6 +42,10 @@ module.exports = {
       filename: 'cards.html',
       template: './UIkit/cards/cards.pug',
       chunks: ['cards']
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
     }),
     // new MiniCssExtractPlugin({
     //   filename: '[name].[contenthash].css'
