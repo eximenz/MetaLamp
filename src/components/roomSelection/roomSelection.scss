@@ -1,0 +1,130 @@
+$white: #fff;
+$dark: #1f2041;
+$dark25: rgba(31, 32, 65, 0.25);
+$dark75: rgba(31, 32, 65, 0.75);
+$primary: #bc9cff;
+
+@mixin flex($direction, $jujustify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jujustify;
+  align-items: $align;
+}
+
+@mixin text($family, $weight, $size, $height, $color) {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+}
+
+// @include flex(none, flex-end, none);
+// @include text("Montserrat", 400, 14px, 17px, $dark50);
+
+.roomSelection__container {
+  width: 380px;
+  height: 374px;
+  background: $white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  @include flex(column, none, none);
+}
+
+.roomSelection__text {
+  padding: 40px 30px 21px 30px;
+  @include text("Montserrat", 700, 24px, 29px, $dark);
+}
+
+.arrival-departure__container {
+  @include flex(row, none, none);
+}
+
+.arrival__container,
+.departure__container {
+  @include flex(column, none, none);
+}
+
+.arrival__text {
+  @include text("Montserrat", 700, 12px, 15px, $dark);
+  text-transform: uppercase;
+  padding: 0 20px 5.44px 30px;
+}
+
+.departure__text {
+  @include text("Montserrat", 700, 12px, 15px, $dark);
+  text-transform: uppercase;
+  padding: 0 30px 5.44px 0;
+}
+
+.arrival__field,
+.departure__field {
+  width: 150px;
+  height: 44px;
+  box-sizing: border-box;
+  background: $white;
+  border: 1px solid $dark25;
+  border-radius: 4px;
+  margin: 0 20px 20.56px 30px;
+  @include text("Montserrat", 400, 14px, 18px, $dark75);
+  position: relative;
+}
+
+.departure__field {
+  margin: 0 30px 20.56px 0;
+}
+
+.arrival__input,
+.departure__input {
+  padding-left: 15px;
+  height: 42px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  @include text("Montserrat", 400, 14px, 18px, $dark75);
+}
+
+.arrival__item_after,
+.departure__item_after {
+  pointer-events: none;
+  position: absolute;
+  height: 100%;
+  width: 44px;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  @include flex(none, center, center);
+  &:after {
+    content: "keyboard_arrow_down";
+    font-family: "Material Icons";
+    @include text("Material Icons", 400, 25px, 18px, $dark75);
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+.arrow_next {
+  &:after {
+    content: "arrow_forward";
+    @include text("Material Icons", 400, 24px, 20px, $primary);
+  }
+}
+
+.arrow_prew {
+  &:after {
+    content: "arrow_back";
+    @include text("Material Icons", 400, 24px, 20px, $primary);
+  }
+}
+
+.navTitles {
+  @include text("Montserrat", 700, 19px, 23px, $dark);
+}
+
+.dropdown-date {
+  width: 320px;
+  height: 369px;
+}

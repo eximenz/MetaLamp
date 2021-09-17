@@ -1,2 +1,17 @@
 mixin roomSelection()
-  input.datepicker-here(type='text' data-position='right top')
+  .roomSelection__container
+    .roomSelection__text 
+      | Найдём номера под ваши пожелания
+    .arrival-departure__container 
+      .arrival__container 
+        .arrival__text
+          | прибытие
+        .arrival__field
+          input.arrival__input(type='text' id='start' placeholder="ДД.ММ.ГГГГ")
+          span.arrival__item_after
+      .departure__container 
+        .departure__text
+          | выезд
+        .departure__field
+          input.departure__input(type='text' id='end' placeholder="ДД.ММ.ГГГГ")
+          span.departure__item_after
