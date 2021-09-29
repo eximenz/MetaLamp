@@ -2,16 +2,16 @@ mixin roomSelection()
   .roomSelection__container
     .roomSelection__text 
       | Найдём номера под ваши пожелания
-    .arrival-departure__container 
-      .arrival__container 
-        .arrival__text
+    .dropdown-date__wrapper 
+      .dropdown-date__container 
+        .dropdown-date__text.dropdown-date__text_arrival
           | прибытие
-        .arrival__field
-          input.arrival__input(type='text' id='start' placeholder="ДД.ММ.ГГГГ")
-          span.arrival__item_after
-      .departure__container 
-        .departure__text
+        .dropdown-date__field.dropdown-date__field_arrival
+          input.dropdown-date__range-from.dropdown-date__input(type='text' id='start' placeholder="ДД.ММ.ГГГГ")
+          span.dropdown-date__arrow
+      .dropdown-date__container
+        .dropdown-date__text.dropdown-date__text_departure
           | выезд
-        .departure__field
-          input.departure__input(type='text' id='end' placeholder="ДД.ММ.ГГГГ")
-          span.departure__item_after
+        .dropdown-date__field.dropdown-date__field_departure
+          input.dropdown-date__range-to.dropdown-date__input(type='text' id='end' placeholder="ДД.ММ.ГГГГ")
+          span.dropdown-date__arrow

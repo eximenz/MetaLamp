@@ -1,6 +1,7 @@
 $white: #fff;
 $dark: #1f2041;
 $dark25: rgba(31, 32, 65, 0.25);
+$dark50: rgba(31, 32, 65, 0.5);
 $dark75: rgba(31, 32, 65, 0.75);
 $primary: #bc9cff;
 
@@ -19,9 +20,6 @@ $primary: #bc9cff;
   color: $color;
 }
 
-// @include flex(none, flex-end, none);
-// @include text("Montserrat", 400, 14px, 17px, $dark50);
-
 .roomSelection__container {
   width: 380px;
   height: 374px;
@@ -38,46 +36,46 @@ $primary: #bc9cff;
   @include text("Montserrat", 700, 24px, 29px, $dark);
 }
 
-.arrival-departure__container {
+.dropdown-date__wrapper {
   @include flex(row, none, none);
 }
 
-.arrival__container,
-.departure__container {
+.dropdown-date__container {
   @include flex(column, none, none);
 }
 
-.arrival__text {
+.dropdown-date__text {
   @include text("Montserrat", 700, 12px, 15px, $dark);
   text-transform: uppercase;
+}
+.dropdown-date__text_arrival {
   padding: 0 20px 5.44px 30px;
 }
 
-.departure__text {
-  @include text("Montserrat", 700, 12px, 15px, $dark);
-  text-transform: uppercase;
+.dropdown-date__text_departure {
   padding: 0 30px 5.44px 0;
 }
 
-.arrival__field,
-.departure__field {
+.dropdown-date__field {
   width: 150px;
   height: 44px;
   box-sizing: border-box;
   background: $white;
   border: 1px solid $dark25;
   border-radius: 4px;
-  margin: 0 20px 20.56px 30px;
   @include text("Montserrat", 400, 14px, 18px, $dark75);
   position: relative;
 }
 
-.departure__field {
+.dropdown-date__field_arrival {
+  margin: 0 20px 20.56px 30px;
+}
+
+.dropdown-date__field_departure {
   margin: 0 30px 20.56px 0;
 }
 
-.arrival__input,
-.departure__input {
+.dropdown-date__input {
   padding-left: 15px;
   height: 42px;
   box-sizing: border-box;
@@ -85,10 +83,10 @@ $primary: #bc9cff;
   width: 100%;
   cursor: pointer;
   @include text("Montserrat", 400, 14px, 18px, $dark75);
+  @include flex(none, none, none);
 }
 
-.arrival__item_after,
-.departure__item_after {
+.dropdown-date__arrow {
   pointer-events: none;
   position: absolute;
   height: 100%;
@@ -106,10 +104,35 @@ $primary: #bc9cff;
   }
 }
 
+.dropdown-date {
+  width: 320px;
+  height: 369px;
+  background: $white;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+}
+
+.datepicker--cell {
+  border-radius: 22px;
+}
+
+.datepicker--nav {
+  border: none;
+  min-height: 24px;
+  padding: 20px 20.67px 30px 20.67px;
+  @include text("Montserrat", 700, 19px, 24px, $dark);
+}
+
+.datepicker--nav-action {
+  width: 23.93px;
+}
 .arrow_next {
   &:after {
     content: "arrow_forward";
     @include text("Material Icons", 400, 24px, 20px, $primary);
+    @include flex(none, center, center);
   }
 }
 
@@ -117,14 +140,133 @@ $primary: #bc9cff;
   &:after {
     content: "arrow_back";
     @include text("Material Icons", 400, 24px, 20px, $primary);
+    @include flex(none, center, center);
   }
 }
 
-.navTitles {
-  @include text("Montserrat", 700, 19px, 23px, $dark);
+.datepicker--nav-title {
+  @include text("Montserrat", 700, 19px, 24px, $dark);
+  padding: 0;
 }
 
-.dropdown-date {
-  width: 320px;
-  height: 369px;
+.datepicker--content {
+  padding: 0;
+}
+
+.datepicker--days-names {
+  margin: 0 19.67px 0 21.2px;
+}
+
+.datepicker--day-name {
+  width: 39.88px;
+  height: 40px;
+  @include text("Montserrat", 700, 12px, 15px, $primary);
+  text-transform: none;
+}
+
+.datepicker--cells-days {
+  margin: 0 19.67px 0 20.94px;
+  @include text("Montserrat", 400, 12px, 15px, $dark50);
+}
+
+.datepicker--cell-day {
+  height: 40px;
+}
+
+.datepicker--cell.-current- {
+  color: $white;
+  background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  border-radius: 22px;
+  &:hover {
+    color: $white;
+  }
+}
+
+.datepicker--cell.-current-.-focus- {
+  opacity: 0.5;
+}
+
+.datepicker--cell.-in-range-,
+.datepicker--cell.-in-range-.-focus- {
+  background: $dark25;
+  color: $dark50;
+}
+
+.datepicker--cell.-range-from-,
+.datepicker--cell.-range-from-.-focus-,
+.datepicker--cell.-selected-.-current-.-focus- {
+  background: $dark25;
+  border-radius: 22px 0 0 22px;
+  border: none;
+  opacity: 1;
+}
+
+.datepicker--cell.-range-from-::before,
+.datepicker--cell.-range-to-::after {
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  border-radius: 22px;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.datepicker--cell.-range-to-,
+.datepicker--cell.-range-to-.-focus- {
+  background: $dark25;
+  border-radius: 0 22px 22px 0;
+  border: none;
+}
+
+.datepicker--cell.-selected-.-current- {
+  background: $dark25;
+  border-radius: 22px 0 0 22px;
+  border: none;
+}
+
+.datepicker--buttons {
+  border-top: none;
+  padding: 0;
+  @include flex(row, space-between, none);
+  justify-content: space-between;
+}
+
+.datepicker--button {
+  text-transform: uppercase;
+  @include text("Montserrat", 700, 12px, 15px, $primary);
+  padding: 20.44px 20px 20px 20px;
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+  @include flex(none, flex-start, none);
+}
+
+.datepicker--button:hover {
+  color: $primary;
+  opacity: 0.5;
+  background: $white;
+}
+
+.datepicker--button_apply {
+  @include flex(none, flex-end, none);
+}
+
+.-selected-.datepicker--cell-day.-other-month-,
+.-selected-.datepicker--cell-year.-other-decade- {
+  color: #fff;
+  background: $dark25;
+}
+.-in-range-.datepicker--cell-day.-other-month-,
+.-in-range-.datepicker--cell-year.-other-decade- {
+  background: $dark25;
+  color: $dark25;
+}
+.-in-range-.-focus-.datepicker--cell-day.-other-month-,
+.-in-range-.-focus-.datepicker--cell-year.-other-decade- {
+  background: $dark25;
+}
+.datepicker--cell.-range-to-,
+.datepicker--cell.-range-to-.-selected-.-focus- {
+  background: $dark25;
 }
